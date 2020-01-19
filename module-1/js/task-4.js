@@ -1,3 +1,4 @@
+'use strict';
 const credits = 23580;
 const pricePerDroid = 300;
 let userChoice = prompt("Сколько дроидов надо?");

@@ -1,3 +1,4 @@
+'use strict';
 let country=prompt("Введите страну");
 let price;
 const inLowerCaseCountry=country.toLowerCase();
