@@ -4,6 +4,5 @@ let total = 0;
 while(input!==null){
     input=prompt("Введите число");
     let temp=Number(input);
-    total=total+temp;
-  }
+    total=total+temp;}
 console.log(total);
