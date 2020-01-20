@@ -1,9 +1,12 @@
 'use strict';
-let input;
+let input = prompt("Введите число");
 let total = 0;
 while (input !== null) {
   input = prompt("Введите число");
-  let temp = Number(input);
-  total = total + temp;
-}
-console.log(total);
+  if (Number.isNaN(Number(input))) {
+      console.log("Incorrect")
+    } else {
+      total = total + Number(input);
+    }
+  }
+ console.log(total);
