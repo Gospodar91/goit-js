@@ -1,9 +1,8 @@
 'use strict';
 const credits = 23580;
-const pricePerDroid = 300;
-let userChoice = prompt("Сколько дроидов надо?");
-userChoice = Number(userChoice);
-const totalPrice = pricePerDroid * userChoice;
+const pricePerDroid = 3000;
+const userChoice = prompt("Сколько дроидов надо?");
+const totalPrice = pricePerDroid * Number(userChoice);
 const balance = credits - totalPrice;
 if (userChoice === null) {
     console.log('Отменено пользователем!');
@@ -11,5 +10,4 @@ if (userChoice === null) {
     console.log('Недостаточно средств на счету!');
 } else {
     console.log(`Вы купили ${userChoice} дроидов, на счету осталось ${balance} кредитов.`)
-
 }
