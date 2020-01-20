@@ -4,7 +4,7 @@ let message;
 message = prompt("Введите пароль");
 if (message === ADMIN_PASSWORD) {
     console.log("'Добро пожаловать!'");
-} else if (message == null) {
+} else if (message === null) {
     console.log("'Отменено пользователем!'")
 
 } else {
