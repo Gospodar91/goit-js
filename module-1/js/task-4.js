@@ -2,10 +2,9 @@
 const credits = 23580;
 const pricePerDroid = 300;
 let userChoice = prompt("Сколько дроидов надо?");
-userChoice=Number(userChoice);
+userChoice = Number(userChoice);
 const totalPrice = pricePerDroid * userChoice;
 const balance = credits - totalPrice;
-
 if (userChoice === null) {
     console.log('Отменено пользователем!');
 } else if (totalPrice > credits) {
