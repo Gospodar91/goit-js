@@ -1,16 +1,14 @@
 'use strict';
-let input = prompt("Введите число");
+let input;
 const numbers = [];
 let total = 0;
 while (input !== null) {
+  input = prompt("Введите число");
   if (isNaN(input)) {
-    alert("Было введено не число,попробуйте еще раз")
-    input = prompt("Введите число");
-    continue;
+    alert("Было введено не число,попробуйте еще раз");
   } else {
     numbers.push(input);
   }
-  input = prompt("Введите число");
 }
 for (let i = 0; i < numbers.length; i++) {
   total += Number(numbers[i])
