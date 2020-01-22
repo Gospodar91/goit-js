@@ -2,8 +2,11 @@
 const getAllPropValues = function(products, prop) {
   const result = [];
   for (let i = 0; i < products.length; i++) {
-    const curElement = products[i];
-    result.push(curElement[prop]);
+    if (Object.keys(products[i]).includes(prop))
+      if (typeof prop !== undefined) {
+        const curElement = products[i];
+        result.push(curElement[prop]);
+      }
   }
   return result;
 };
@@ -15,4 +18,8 @@ const products = [
 ];
 console.log(getAllPropValues(products, "name")); // ['Радар', 'Сканер', 'Дроид', 'Захват']
 console.log(getAllPropValues(products, "quantity")); // [4, 3, 7, 2]
-console.log(getAllPropValues(products, "price")); //
+console.log(getAllPropValues(products, "category")); //
+// let a=5;
+// if(Object.keys(products[0]).includes('name')){
+// console.log(a)
+// }

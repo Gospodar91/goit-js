@@ -7,9 +7,9 @@ const products = [
 ];
 const calculateTotalPrice = function(allProdcuts, productName) {
   let rezult;
-  for (let i = 0; i < products.length; i++) {
-    if (productName === products[i].name) {
-      let temp = products[i].price * products[i].quantity;
+  for (let i = 0; i <allProdcuts.length; i++) {
+    if (productName === allProdcuts[i].name) {
+      let temp = allProdcuts[i].price *allProdcuts[i].quantity;
       rezult = temp;
     }
   }
@@ -17,8 +17,6 @@ const calculateTotalPrice = function(allProdcuts, productName) {
 };
 console.log(calculateTotalPrice(products, "Радар")); // 5200
 console.log(calculateTotalPrice(products, "Дроид")); // 2800
-console.log(calculateTotalPrice(products, "Сканер"));
-console.log(calculateTotalPrice(products, "Захват"));
 
-// let result=products.price[0]*products* quantity[0];
-// отсортировать массив по продукт нейм и сделать строгое сравнение с ключом кей если тру-перемножаем,фолс-перебираем
+
+
