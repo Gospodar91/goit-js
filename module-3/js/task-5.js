@@ -3,10 +3,9 @@ const getAllPropValues = function(products, prop) {
   const result = [];
   for (let i = 0; i < products.length; i++) {
     if (Object.keys(products[i]).includes(prop))
-      if (typeof prop !== undefined) {
         const curElement = products[i];
         result.push(curElement[prop]);
-      }
+      
   }
   return result;
 };
