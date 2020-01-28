@@ -36,7 +36,7 @@ class Car {
   }
 
   drive(hours) {
-    if (this.isOn === true) {
+    if (this.isOn ) {
       this.distance += this.speed * hours;
     }
   }
@@ -51,6 +51,7 @@ mustang.accelerate(50);
 mustang.drive(2);
 Car.getSpecs(mustang);
 // maxSpeed: 200, speed: 50, isOn: true, distance: 100, price: 2000
+console.log(mustang);
 mustang.decelerate(20);
 mustang.drive(1);
 mustang.turnOff();
