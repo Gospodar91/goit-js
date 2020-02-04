@@ -10,7 +10,6 @@ const ingredients = [
   "Зелень",
   "Приправы"
 ];
-
 ingredients.forEach(ingr => {
   const prodLi = document.createElement("li");
   prodLi.textContent = ingr;

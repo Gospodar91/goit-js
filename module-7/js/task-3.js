@@ -22,7 +22,9 @@ const imageList = document.querySelector("#gallery");
 imageList.insertAdjacentHTML("afterbegin", createGallery(images));
 
 function createGallery(images) {
-  return images.map(image => createGalleryMarkup(image.url, image.alt)); // callback
+  return images
+    .map(image => createGalleryMarkup(image.url, image.alt))
+    .join(""); // callback
 }
 function createGalleryMarkup(url, alt) {
   // принимает значения
