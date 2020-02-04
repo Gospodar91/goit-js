@@ -6,4 +6,6 @@ input.addEventListener("input", event => {
   if (output.textContent === "") {
     output.textContent = "незнакомец";
   }
+  
+
 });
