@@ -26,7 +26,7 @@ function defaultTheme() {
   }
 }
 defaultTheme();
-refs.bodyRef.addEventListener('click', onClick);
+refs.buttonSelector.addEventListener('change', onClick);
 function onClick(e) {
   //Проверка true/false  кнопки
   if (refs.buttonSelector.checked) {
