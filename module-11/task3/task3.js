@@ -5,9 +5,11 @@ class CountdownTimer {
     this.selector = selector;
     this.targetDate = targetDate;
   }
-
   updateTimer() {
-    const time = Date.parse(this.targetDate) - Date.now();
+    let time = Date.parse(this.targetDate) - Date.now();
+    if (time < 0) {
+      time = 0;
+    }
     const days = Math.floor(time / (1000 * 60 * 60 * 24));
     const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
@@ -20,10 +22,9 @@ class CountdownTimer {
       this.updateTimer();
     }, 1000);
   }
-    
 }
 const timer = new CountdownTimer({
   selector: "#timer-1",
-  targetDate: new Date("Jul 17, 2020")
+  targetDate: new Date("Dec 31, 2020")
 });
 timer.updateTimer();
