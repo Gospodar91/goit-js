@@ -24,7 +24,12 @@ img {
   height: auto;
 
 }
-
+ .Phil{
+  text-align: center;
+font-size: 50px;
+padding-bottom: 20px;
+color:red;
+ }
 .timer {
 
   margin: 100px;
