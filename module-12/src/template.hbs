@@ -1,0 +1,17 @@
+<li>
+    <div class="country-content">
+        <ul class="inner-country-content">
+            <li class="country-name">{{name}}</li>
+            <li class="titles">Capital: {{capital}}</li>
+            <li class="titles">Population: {{population}}</li>
+            <li class="titles title-lang">Languages:
+                <ul class="language-list">
+                    {{#each languages}}
+                    <li class="language-list__item">{{this.name}}</li>
+                    {{/each}}
+                </ul>
+            </li>
+        </ul>
+        <div class="flag-img"><img src="{{flag}}" alt="country flag image" width="320"></div>
+    </div>
+</li>
