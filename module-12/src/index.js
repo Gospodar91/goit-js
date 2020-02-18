@@ -2,12 +2,13 @@ import "./styles.css";
 import dataApiFetch from "./fetchCountries.js";
 import template from "./template.hbs";
 import CountryList from "./countryList.hbs";
-import _debounce from "lodash.debounce";
+import debounce from "lodash.debounce";
 import PNotify from "pnotify/dist/es/PNotify.js";
+import   "../node_modules/pnotify/dist/PNotifyBrightTheme.css";
 const searhForm = document.querySelector("#formData");
 const countryList = document.querySelector(".country-list");
 let markup;
-searhForm.addEventListener("input", _debounce(searchDataHandler, 1000));
+searhForm.addEventListener("input", debounce(searchDataHandler, 1000));
 
 function searchDataHandler(event) {
   const inputEvent = event.target.value;
@@ -32,5 +33,9 @@ function buildResult(array) {
   } else if (array.length === 1) {
     markup = array.map(result => template(result)).join("");
     countryList.insertAdjacentHTML("beforeend", markup);
+  }
+  else{
+    PNotify.notice({ title: "Warning!", text: "Incorrect query." });
+
   }
 }
