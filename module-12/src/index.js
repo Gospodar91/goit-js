@@ -34,8 +34,8 @@ function buildResult(array) {
     markup = array.map(result => template(result)).join("");
     countryList.insertAdjacentHTML("beforeend", markup);
   }
-  // else{
-  //   PNotify.notice({ title: "Warning!", text: "Incorrect query." });
+  else{
+    PNotify.notice({ title: "Warning!", text: "Incorrect query." });
 
-  // }
+  }
 }
