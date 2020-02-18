@@ -12,7 +12,7 @@ searhForm.addEventListener("input", debounce(searchDataHandler, 1000));
 
 function searchDataHandler(event) {
   const inputEvent = event.target.value;
-  if (inputEvent === " ") {
+  if (inputEvent === "S") {
     return;
   } else {
     dataApiFetch(inputEvent, buildResult);
@@ -34,8 +34,8 @@ function buildResult(array) {
     markup = array.map(result => template(result)).join("");
     countryList.insertAdjacentHTML("beforeend", markup);
   }
-  else{
-    PNotify.notice({ title: "Warning!", text: "Incorrect query." });
+  // else{
+  //   PNotify.notice({ title: "Warning!", text: "Incorrect query." });
 
-  }
+  // }
 }
