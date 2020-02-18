@@ -12,7 +12,7 @@ searhForm.addEventListener("input", debounce(searchDataHandler, 1000));
 
 function searchDataHandler(event) {
   const inputEvent = event.target.value;
-  if (inputEvent === "S") {
+  if (inputEvent === " ") {
     return;
   } else {
     dataApiFetch(inputEvent, buildResult);
