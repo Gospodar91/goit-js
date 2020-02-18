@@ -12,7 +12,8 @@ searhForm.addEventListener("input", debounce(searchDataHandler, 1000));
 
 function searchDataHandler(event) {
   const inputEvent = event.target.value;
-  if (inputEvent === " ") {
+  if (!inputEvent) {
+    clearList();
     return;
   } else {
     dataApiFetch(inputEvent, buildResult);
@@ -27,7 +28,7 @@ function buildResult(array) {
   clearList();
   PNotify.closeAll();
   if (array.length > 10) {
-    PNotify.notice({ title: "Warning!", text: "Too many matches found." });
+    PNotify.error({ title: "Warning!", text: "Too many matches found." });
 
   } else if (array.length > 1 && array.length <= 10) {
     markup = array.map(result => CountryList(result)).join("");
@@ -37,7 +38,7 @@ function buildResult(array) {
     countryList.insertAdjacentHTML("beforeend", markup);
   }
   else{
-    PNotify.notice({ title: "Warning!", text: "Incorrect query." });
+    PNotify.error({ title: "Warning!", text: "Incorrect query." });
 
   }
 }
