@@ -1,0 +1,45 @@
+html {
+  box-sizing: border-box;
+  width: 100vw;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0 auto;
+
+
+}
+
+ul {
+  list-style-type: none;
+}
+
+.gallery{
+  display: flex;
+ 
+  width: 1400px;
+  flex-wrap: wrap;
+
+  
+}
+.main-li{
+
+  width: 200px;
+  margin-right: 20px;
+
+}
+.stats{
+  display: flex;
+  justify-content: space-between;
+ 
+}
+#btn-load-more{
+  margin-bottom: 400px;
+}
