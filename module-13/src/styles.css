@@ -42,18 +42,3 @@ ul {
 }
 
 
-/* fetch(baseURL)
-.then(data => {
-
-  data.json();})
-
-.then(data =>
-  callback(
-    data,
-    PNotify.closeAll(),
-    PNotify.success({ title: "Status"+st, text: "Server is active." })
-  )
-)
-.catch(error => console.log(error));
-}
- */

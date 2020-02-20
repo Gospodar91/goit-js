@@ -23,14 +23,3 @@ export default function pixiApi(search, numberPage, callback) {
     .catch(error => console.log(error));
 }
 
-// fetch(baseURL)
-//     .then(data => data.json())
-//     .then(data =>
-//       callback(
-//         data,
-//         PNotify.closeAll(),
-//         PNotify.success({ title: "Status", text: "Server is active." })
-//       )
-//     )
-//     .catch(error => console.log(error));
-// }

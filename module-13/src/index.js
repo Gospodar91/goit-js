@@ -7,17 +7,18 @@ import * as basicLightbox from "basiclightbox";
 import "basiclightbox/dist/basicLightbox.min.css";
 let currentPage = 0;
 let inpValue;
-const classDiv = document.querySelector("#div-section");
+const classDiv = document.querySelector(".gallery");
 const classBtn = document.querySelector("#btn-load-more");
 const searchInput = document.querySelector("#search");
+const enterInput = document.querySelector("#search-form");
 classBtn.addEventListener("click", onClickBtn);
 classDiv.addEventListener("click", mainInstance);
+enterInput.addEventListener('submit',onClickBtn);
 
 function onClickBtn(event) {
+  event.preventDefault();
   classBtn.setAttribute("disabled", true);
-  if (currentPage >= 1 && inpValue === searchInput.value) {
-    currentPage = currentPage++;
-  } else if (currentPage >= 1 && inpValue !== searchInput.value) {
+  if (currentPage >= 1 && inpValue !== searchInput.value) {
     currentPage = 0;
     classDiv.innerHTML = "";
   }
