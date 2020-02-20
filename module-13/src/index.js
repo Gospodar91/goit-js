@@ -7,7 +7,6 @@ import * as basicLightbox from "basiclightbox";
 import "basiclightbox/dist/basicLightbox.min.css";
 let currentPage = 0;
 let inpValue;
-let optionScrollTop = 0;
 const classDiv = document.querySelector("#div-section");
 const classBtn = document.querySelector("#btn-load-more");
 const searchInput = document.querySelector("#search");
@@ -29,24 +28,18 @@ function parseData(data) {
   const buildPage = listPhoto(data);
   classDiv.insertAdjacentHTML("beforeend", buildPage);
   classBtn.removeAttribute("disabled");
-  if (currentPage > 1) {
-    optionScrollTop = optionScrollTop + 440;
-  } else if (currentPage === 1) {
-    optionScrollTop = 0;
-  }
+
   const optionScroll = {
-    top: optionScrollTop,
+    top: document.body.scrollHeight,
     behavior: "smooth"
   };
-  setTimeout(function() {
-    window.scrollTo(optionScroll);
-  }, 300);
+  window.scrollTo(optionScroll);
 }
 function mainInstance(e) {
   classDiv.removeEventListener("click", mainInstance);
   if (e.target.localName === "img") {
     const instance = basicLightbox.create(`
-    <img src="${e.target.alt}" >
+    <img src="${e.target.dataset.option}" >
     `);
     instance.show();
   }
